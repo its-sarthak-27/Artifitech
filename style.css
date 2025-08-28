@@ -1,0 +1,356 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: background 0.4s ease, color 0.4s ease; /* allow scrolling */
+}
+h1, h2, h3, p, a, button {
+  color: inherit; /* Ensures they take body color */
+}
+
+body.dark-mode {
+  background: #111111;
+  color: #ffffff;
+}
+
+
+
+/* Chatbot Button */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  background: #333;
+}
+
+/* Chatbot Window */
+.chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-header {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.message {
+  margin-bottom: 8px;
+}
+
+.message.bot {
+  color: #000;
+}
+
+.message.user {
+  color: blue;
+  text-align: right;
+}
+
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.chatbot-input button {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+a { color: #00f0ff; text-decoration: none; }
+
+header.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Removed blurred background */
+header.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: none;
+  filter: none;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: none; /* Change as needed */
+  overflow: hidden;
+}
+
+.hero-content {
+  position: absolute;
+  top: 45%;
+  left: 32%;
+  color: white;
+  z-index: 2;
+  transition: transform 0.8s ease-in-out, top 0.8s ease-in-out, left 0.8s ease-in-out;
+}
+
+
+.hero-content h1 { font-size: 3rem; }
+.hero-content h1 span { color: #00f0ff; }
+.hero-content p { margin: 1rem 0; font-size: 1.25rem; }
+
+.hero-content.moved {
+  top: 30%;
+  left: 85%; /* Push it further right */
+  transform: translate(-50%, 0); /* Ensures centering on new position */
+}
+
+.btn {
+  padding: 0.5rem 1.2rem;
+  background: #00f0ff;
+  border-radius: 20px;
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.btn:hover { transform: scale(1.05); }
+
+/* .top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 0;
+  z-index: 10;
+}
+
+.top-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+} */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 2rem;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between; /* Key: separates left & right */
+  align-items: center;
+}
+
+.top-nav .nav-center {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.top-nav ul li a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-nav ul li a:hover {
+  color: #fff;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-right .btn {
+  padding: 0.5rem 1.2rem;
+  background: #00f0ff;
+  border-radius: 20px;
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.nav-right .btn:hover {
+  transform: scale(1.05);
+  background: #00d0e0;
+}
+
+/* bcjxzbcj */
+
+.glass-section {
+  margin: 5rem auto;
+  max-width: 900px;
+  padding: 1rem;
+  background-color: #000;
+  border-radius: 20px;
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.skills-grid, .projects-grid ,.card-content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-top: 1rem;
+}
+
+.skill-card, .project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.connect-item{
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+}
+
+.connect-item:hover {
+  transform: translateY(-2px) scale(0.8);
+  box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Foreground image aligned to top-left */
+.foreground-image {
+  position: absolute;
+  top: 30vh;
+  left: -50vw;
+  width: 300px;
+  height: 300px;
+  background: url('your-photo.jpg') center center/cover no-repeat;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.foreground-image.moved {
+  transform: translate(-3vw, 10vh); /* Slightly left + down */
+}
+
+.foreground-image.active {
+  top: 25vh;  /* Moves slightly down */
+  left: 10vw;
+  opacity: 1;
+}
+
+.foreground-image.overlay {
+  transform: translate(32vw, -15vh); /* move it towards text area */
+  width: 200px;
+  height: 200px;
+  z-index: 3; /* place above text */
+}
+
+.about {
+  max-width: 800px;
+  margin: 120px auto;
+  padding: 20px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
