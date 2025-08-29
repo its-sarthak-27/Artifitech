@@ -317,7 +317,7 @@ footer {
   left: -50vw;
   width: 300px;
   height: 300px;
-  background: url('your-photo.jpg') center center/cover no-repeat;
+  background: url('your-photo.png') center center/cover no-repeat;
   border-radius: 50%;
   z-index: 1;
   opacity: 0;
@@ -354,3 +354,58 @@ nav a.active {
   text-decoration: underline;
 }
 
+/* ghhjghjghg */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 2rem;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-center {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-center li a {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-center li a:hover {
+  color: #fff;
+}
+
+.nav-right {
+  position: absolute; /* Key: makes buttons stay at the right */
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-right .btn {
+  padding: 0.5rem 1.2rem;
+  background: #00f0ff;
+  border-radius: 20px;
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.nav-right .btn:hover {
+  transform: scale(1.05);
+  background: #00d0e0;
+}
