@@ -14,6 +14,12 @@ particlesJS("particles-js", {
   }
 });
 
+
+function toggleMenu() {
+  document.querySelector('.nav-center').classList.toggle('active');
+  // document.querySelector('.nav-right').classList.toggle('active');
+}
+
 let introPlayed = false;
 
 // Trigger animation on first scroll or swipe, but do not block scrolling
